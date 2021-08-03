@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { auth } from "../_actions/user_action";
 
 export default function (SpecificComponent, option, adminRoute = null) {
@@ -10,6 +10,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
   //adminRoute = null => 안쓰면 기본값 null
 
   function AuthenticationCheck(props) {
+    let user = useSelector(state => state.user);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -32,7 +33,7 @@ export default function (SpecificComponent, option, adminRoute = null) {
       });
     }, []);
 
-    return <SpecificComponent {...props}/>;
+    return <SpecificComponent {...props} user={user}/>;
   }
 
   return AuthenticationCheck;

@@ -23,7 +23,7 @@ function LandingPage() {
       setMovies([...Movies, ...res.results]);
       setMainMovieImage(res.results[0]);
       setCurrentPage(res.page);
-      console.log(res.results);
+      //console.log(res.results);
     });
   }
 
@@ -39,13 +39,13 @@ function LandingPage() {
         margin: "0",
       }}
     >
-      {MainMovieImage && (
+      {MainMovieImage && 
         <MainImage
           image={`${IMAGE_BASE_URL}w1280${MainMovieImage.backdrop_path}`}
           title={MainMovieImage.original_title}
           text={MainMovieImage.overview}
         />
-      )}
+      }
       <div style={{ width: "85%", margin: "1rem auto" }}>
         <h2>Movies by latest</h2>
         <br />
