@@ -44,7 +44,8 @@ function RegisterPage(props) {
       if (res.payload.success) {
         props.history.push("/login");
       } else {
-        alert("Failed to sign up");
+        console.log(res);
+        alert(res.payload.message);
       }
     });
   };

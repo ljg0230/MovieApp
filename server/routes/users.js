@@ -9,14 +9,23 @@ const { auth } = require("../middleware/auth");
 //=================================
 
 router.post("/register", (req, res) => {
-  const user = new User(req.body);
+  //const user = new User(req.body);
 
-  user.save((err, userInfo) => {
-    if (err) return res.json({ success: false, err });
-    return res.status(200).json({
-      success: true,
+  User.findOne({ email: req.body.email }, (err, user) => {
+    if (user) {
+      return res.status(500).json({
+        loginSuccess: false,
+        message: "이미 존재하는 이메일 입니다.",
+      });
+    }
+    user.save((err, userInfo) => {
+      console.log('user info: ', userInfo)
+      if (err) return res.json({ success: false, err });
+      return res.status(200).json({
+        success: true,
+      });
     });
-  });
+  })
 });
 
 router.post("/login", (req, res) => {
