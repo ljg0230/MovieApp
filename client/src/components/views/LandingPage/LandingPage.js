@@ -79,6 +79,7 @@ function LandingPage() {
                   }
                   movieId={movie.id}
                   movieName={movie.original_title}
+                  voteAverage={movie.vote_average}
                 />
               </React.Fragment>
             ))}
