@@ -49,6 +49,9 @@
 }
 
 .menu__mobile-button {
+  position: absolute;
+  top: 20%;
+  left: 90%;
   float: right;
   height: 32px;
   padding: 6px;
