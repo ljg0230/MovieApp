@@ -15,7 +15,7 @@ router.post("/register", (req, res) => {
     if (user) {
       return res.status(500).json({
         loginSuccess: false,
-        message: "이미 존재하는 이메일 입니다.",
+        message: "This Email already exists.",
       });
     }
     user.save((err, userInfo) => {
@@ -34,7 +34,7 @@ router.post("/login", (req, res) => {
     if (!user) {
       return res.json({
         loginSuccess: false,
-        message: "제공된 이메일에 해당하는 유저가 없습니다.",
+        message: "The user does not exist in this Email address.",
       });
     }
     //요청된 이메일이 DB에 존재한다면 비밀번호 확인
@@ -42,7 +42,7 @@ router.post("/login", (req, res) => {
       if (!isMatch)
         return res.json({
           loginSuccess: false,
-          message: "비밀번호가 틀렸습니다.",
+          message: "Password is wrong.",
         });
 
       //비밀번호 확인 후 토큰 생성

@@ -29,7 +29,7 @@ function NavBar() {
       <div className="menu__logo">
         <a href="/">
           <img src={iconImage} alt="icon"/>
-          Movie Rank
+          Movie List
         </a>
       </div>
       <div className="menu__container">

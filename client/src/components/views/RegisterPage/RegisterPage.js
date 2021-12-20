@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import { registerUser } from "../../../_actions/user_action";
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import { Form, Input, Button } from "antd";
 
 function RegisterPage(props) {
   const dispatch = useDispatch();
@@ -29,9 +30,12 @@ function RegisterPage(props) {
 
   const onSubmitHandler = (event) => {
     event.preventDefault(); // page refresh 방지
+    if (Email === "" || Name === "") {
+      return alert("Please Input this form.");
+    }
 
     if (Password !== ConfirmPassword) {
-      return alert("비밀번호와 비밀번호 확인은 같아야 합니다.");
+      return alert("Password and Confirm password must be the same.");
     }
 
     let body = {
@@ -60,29 +64,77 @@ function RegisterPage(props) {
         height: "100vh",
       }}
     >
-      <form
-        style={{ display: "flex", flexDirection: "column" }}
+      <Form
+        name="basic"
+        labelCol={{
+          span: 6,
+        }}
+        wrapperCol={{
+          span: 16,
+        }}
+        autoComplete="off"
         onSubmit={onSubmitHandler}
+        style={{
+          backgroundColor: "#bfd0df",
+          position: "absolute",
+          width: "400px",
+          padding: "30px 20px",
+          textAlign: "center",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          borderRadius: "15px",
+          boxShadow: "1px 1px 2px 1px rgba(0,0,0,0.3)",
+        }}
       >
-        <label>Email</label>
-        <input type="email" value={Email} onChange={onEmailHandler} />
+        <h2>Sign Up</h2>
+        <Form.Item
+          label="Email"
+          name="email"
+          value={Email}
+        >
+          <Input onChange={onEmailHandler} />
+        </Form.Item>
 
-        <label>Name</label>
-        <input type="text" value={Name} onChange={onNameHandler} />
+        <Form.Item
+          label="Name"
+          name="name"
+          value={Name}
+        >
+          <Input onChange={onNameHandler} />
+        </Form.Item>
 
-        <label>Password</label>
-        <input type="password" value={Password} onChange={onPasswordHandler} />
+        <Form.Item
+          label="Password"
+          name="password"
+          value={Password}
+        >
+          <Input.Password onChange={onPasswordHandler} />
+        </Form.Item>
 
-        <label>Confirm Password</label>
-        <input
-          type="password"
+        <Form.Item
+          label="Confirm PW"
+          name="confirmPassword"
           value={ConfirmPassword}
-          onChange={onConfirmPasswordHandler}
-        />
+        >
+          <Input.Password onChange={onConfirmPasswordHandler} />
+        </Form.Item>
 
-        <br />
-        <button type="submit">회원가입</button>
-      </form>
+        <Form.Item
+          name="Button"
+          wrapperCol={{
+            offset: 6,
+            span: 12,
+          }}
+        >
+          <Button type="primary" htmlType="submit" style={{ width: "130px" }}>
+            Sign Up
+          </Button>
+        </Form.Item>
+        <div>
+          Do you already have ID? <a href="/login">&nbsp;&nbsp;Login</a>
+        </div>
+      </Form>
     </div>
   );
 }
