@@ -3,7 +3,7 @@ import { Icon } from "antd";
 
 function Footer() {
   return (
-    <div
+    <footer
       style={{
         height: "80px",
         display: "flex",
@@ -13,15 +13,15 @@ function Footer() {
         fontSize: "1.1rem",
         backgroundColor: "#bfd0df",
         borderTop: "solid 2px #e8e8e8",
-        position: "absolute",
         bottom: "0",
         width: "100%",
+        position: "absolute",
       }}
     >
       <p>
         Happy Coding <Icon type="smile" />
       </p>
-    </div>
+    </footer>
   );
 }
 

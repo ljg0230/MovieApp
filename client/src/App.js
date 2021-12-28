@@ -14,7 +14,7 @@ function App() {
   return (
     <Suspense fallback={(<div>Loading...</div>)}>
       <NavBar />
-      <div>
+      <div className="content-wrap">
         <hr />
         <Switch>
           <Route exact path="/" component={Auth(LandingPage, null)} />
