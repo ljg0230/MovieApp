@@ -7,9 +7,9 @@ function GridCards(props) {
     return (
       <Col lg={6} md={8} xs={24}>
         <div style={{ position: "relative" }}>
-          <div class="img-box">
+          <div className="img-box">
             <a href={`/movie/${props.movieId}`}>
-              <div class="img-div">
+              <div className="img-div">
                 <img
                   style={{
                     width: "100%",
@@ -19,7 +19,7 @@ function GridCards(props) {
                   alt={props.movieName}
                 />
               </div>
-              <div class="img-desc-div">
+              <div className="img-desc-div">
                 <p>{props.movieName}</p>
                 <p>Rating: {props.voteAverage}</p>
               </div>
@@ -40,6 +40,7 @@ function GridCards(props) {
             }}
             src={props.image}
             alt={props.characterName}
+            title={props.characterName}
           />
         </div>
       </Col>

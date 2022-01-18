@@ -9,6 +9,7 @@ import promiseMiddleware from "redux-promise";
 import ReduxThunk from "redux-thunk";
 import Reducer from "./_reducers";
 import { BrowserRouter } from "react-router-dom";
+import "./index.css"
 
 const createStoreWithMiddleware = applyMiddleware(
   promiseMiddleware,

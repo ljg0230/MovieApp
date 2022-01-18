@@ -4,7 +4,8 @@ import { withRouter } from "react-router-dom";
 import MainImage from "../LandingPage/Sections/MainImage";
 import MovieInfo from "./Sections/MovieInfo";
 import GridCards from "../commons/GridCards";
-import Favorite from "./Sections/Favorite"
+import Favorite from "./Sections/Favorite";
+import unkwonPersonImage from "../../../images/Unknown_person.jpg";
 import { Row, Button } from "antd";
 
 function MovieDetail(props) {
@@ -32,7 +33,7 @@ function MovieDetail(props) {
 
   const toggleActorView = () => {
     setActorToggle(!ActorToggle);
-  }
+  };
 
   return (
     <div>
@@ -44,9 +45,12 @@ function MovieDetail(props) {
       />
       {/* Body */}
       <div style={{ width: "85%", margin: "3rem auto" }}>
-
-        <div style={{ display: 'flex', justifyContent: 'flex-end'}}>
-          <Favorite  movieInfo={Movie} movieId={movieId} userFrom={localStorage.getItem('userId')} />
+        <div style={{ display: "flex", justifyContent: "flex-end" }}>
+          <Favorite
+            movieInfo={Movie}
+            movieId={movieId}
+            userFrom={localStorage.getItem("userId")}
+          />
         </div>
 
         {/* Movie Info */}
@@ -60,7 +64,7 @@ function MovieDetail(props) {
           <Button onClick={toggleActorView}> Toggle Actor View </Button>
         </div>
 
-        {ActorToggle && 
+        {ActorToggle && (
           <Row gutter={[16, 16]}>
             {Casts &&
               Casts.map((cast, index) => (
@@ -69,14 +73,14 @@ function MovieDetail(props) {
                     image={
                       cast.profile_path
                         ? `${IMAGE_BASE_URL}w500${cast.profile_path}`
-                        : null
+                        : unkwonPersonImage
                     }
                     characterName={cast.name}
                   />
                 </React.Fragment>
               ))}
           </Row>
-        }
+        )}
       </div>
     </div>
   );
