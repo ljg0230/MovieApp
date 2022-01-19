@@ -2,6 +2,15 @@
 
 <img  src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"><img  src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=Redux&logoColor=white"><img  src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=Javascript&logoColor=black"><img  src="https://img.shields.io/badge/html-E34F26?style=for-the-badge&logo=html5&logoColor=white"><img  src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"><img  src="https://img.shields.io/badge/AntDesign-0170FE?style=for-the-badge&logo=AntDesign&logoColor=white"><img  src="https://img.shields.io/badge/node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"><img  src="https://img.shields.io/badge/express-000000?style=for-the-badge&logo=express&logoColor=white"><img  src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">  
 
+## Main Page
+<img src="https://user-images.githubusercontent.com/52925972/150105703-95c1c50b-6155-419b-aa71-7bce2a664ad0.png" width="700" height="400">
+
+## Movie Details Page
+<img src="https://user-images.githubusercontent.com/52925972/150105864-6324854a-8627-4e6f-bc8b-36fec48feb57.PNG" width="700" height="400">
+
+
+
+
 >Hello, Everyone😄 Thank you for Having interest in this repository !
 >
 >This web application shares several movie information using the __'The Movie Database (TMDb) API'.__
