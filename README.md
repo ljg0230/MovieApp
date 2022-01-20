@@ -47,6 +47,7 @@ mongoURI: "mongodb+srv://<username>:<password>@<your-cluster-url>/<DBName>?retry
 - [x] User Authentication (Sign in, Sign up)
 - [x] A preview of the grid card
 - [x] Favorite Page (User Like)
+- [x] Top View
 - [x] Responsive Web
 - [ ] Movie Search  
 - [ ] Changing the format of the movie list
